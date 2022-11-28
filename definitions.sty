@@ -1,0 +1,38 @@
+% LaTex package for defining equations shortcuts
+
+%  authors: Konrad Marciniak, Martyna Taborek
+
+% e.g. \newcommand{\name of package (only letters}}{$$ equation $$}
+
+% shortcuts for every type for least squares method
+
+% y = ax+b wihtout u_y
+\newcommand{\ls}{
+
+\begin{equation}\label{a}
+a =\frac{N\displaystyle\sum_{i=1}^{N}x_i\cdot y_i - \displaystyle\sum_{i=1}^{N}x_i \cdot \displaystyle\sum_{i=1}^{N} y_i}{N\displaystyle\sum_{i=1}^{N}x_i^2-\left(\displaystyle\sum_{i=1}^{N}x_i\right)^2}
+\end{equation}
+
+
+\begin{equation}\label{ua}
+    u_{a} = \sqrt{\frac{\frac{N}{N-2}\cdot \displaystyle\sum_{i=1}^{N}(y_i-a\cdot x_i -b)^2}{N\cdot \displaystyle\sum_{i=1}^{N} x_{i}^2 - \left( \displaystyle\sum_{i=1}^{N} x_i\right)^2 } } 
+\end{equation}
+
+\begin{equation}
+    b = \frac{\displaystyle\sum_{i=1}^{N}x_i^2\displaystyle\sum_{i=1}^{N}y_i - \displaystyle\sum_{i=1}^{N}x_i\displaystyle\sum_{i=1}^{N}x_iy_i}{N\displaystyle\sum_{i=1}^{N}x_i^2-\left(\displaystyle\sum_{i=1}^{N}x_i\right)^2}
+\end{equation}
+
+\begin{equation}
+    u_{b} = \sqrt{\frac{\frac{1}{N-2}\displaystyle\sum_{i=1}^{N}(y_i-ax_i - b)^2\displaystyle\sum_{i=1}^{N}x_i^2}{N\displaystyle\sum_{i=1}^{N}x_i^2-\left(\displaystyle\sum_{i=1}^{N}x_i\right)^2}}
+\end{equation}
+
+}
+
+% y = ax+b with u_y
+
+% y = ax without u_y
+
+% y = ax with u_y
+
+
+% how to do it with arguments?
