@@ -109,4 +109,8 @@ def least_squares(x, y, uy, min, max):
     for i in range(min,max+1):
         chi2+=wi*(y[i]-a*x[i]-b)**2
 
-    return a, b, ua, ub, chi2 
+    return a, b, ua, ub, chi2
+
+# uncertainty type B
+def typeB(dx, dxe):
+    return ((dx**2)/3 + (dxe**2)/3)**0.5
