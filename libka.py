@@ -33,34 +33,20 @@ def least_squares(x, y, min, max):
         yi += y[i]
         xiyi += x[i]*y[i]
         xi2 += x[i]**2
+        yaxb += (y[i]-a*x[i]-b)**2
 
     a = (N*xiyi - xi*yi)/(N*xi2 - xi**2)
     b = (xi2*yi - xiyi*xi)/(N*xi2 - xi**2)
+
+    ua = (N/(N-2)*yaxb/(N*xi2-xi**2))**0.5
+    ub = (yaxb*xi2/(N-2)/(N*xi2-xi**2))**0.5
 
     chi2 = 0
 
     for i in range(min,max+1):
         chi2+=((y[i]-(a*x[i]+b))**2)/(a*x[i]+b)
 
-    return a, b, chi2
-
-def least_squares_u(x, y, a, b, min, max):
-    # without y uncertainty
-    N = max - min + 1
-    xi = 0
-    xi2 = 0
-    yaxb = 0
-    
-# min inclusive, max exclusive remember
-    for i in range(min,max+1):
-        xi += x[i]
-        xi2 += x[i]**2
-        yaxb += (y[i]-a*x[i]-b)**2
-
-    ua = (N/(N-2)*yaxb/(N*xi2-xi**2))**0.5
-    ub = (yaxb*xi2/(N-2)/(N*xi2-xi**2))**0.5
-
-    return ua, ub
+    return a, b, ua, ub, chi2
 
 def least_squares_non_b(x, y, min, max, uy):
     # returns a, ua, chi2
