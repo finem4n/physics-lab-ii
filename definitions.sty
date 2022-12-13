@@ -7,7 +7,20 @@
 % shortcuts for every type for least squares method
 
 % y = ax+b wihtout u_y
-\newcommand{\ls}{
+\newcommand{\chikwbezuy}{
+\begin{equation}
+    \chi^2 = \displaystyle\sum_{i=1}^{N}\frac{(\mbox{wartość pomiarowa} - \mbox{wartość dopasowania})^2}{\mbox{wartość dopasowania}} 
+\end{equation}
+}
+
+\newcommand{\chikwuy}{
+\begin{equation}
+    \chi^2 = \frac{1}{u_{y_i}} \displaystyle\sum^N_{i=1}(x_i-y(x+i)^2 
+\end{equation}
+
+}
+
+\newcommand{\mnkbezuy}{
 
 \begin{equation}\label{a}
 a =\frac{N\displaystyle\sum_{i=1}^{N}x_i\cdot y_i - \displaystyle\sum_{i=1}^{N}x_i \cdot \displaystyle\sum_{i=1}^{N} y_i}{N\displaystyle\sum_{i=1}^{N}x_i^2-\left(\displaystyle\sum_{i=1}^{N}x_i\right)^2}
@@ -18,16 +31,34 @@ a =\frac{N\displaystyle\sum_{i=1}^{N}x_i\cdot y_i - \displaystyle\sum_{i=1}^{N}x
     u_{a} = \sqrt{\frac{\frac{N}{N-2}\cdot \displaystyle\sum_{i=1}^{N}(y_i-a\cdot x_i -b)^2}{N\cdot \displaystyle\sum_{i=1}^{N} x_{i}^2 - \left( \displaystyle\sum_{i=1}^{N} x_i\right)^2 } } 
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{b}
     b = \frac{\displaystyle\sum_{i=1}^{N}x_i^2\displaystyle\sum_{i=1}^{N}y_i - \displaystyle\sum_{i=1}^{N}x_i\displaystyle\sum_{i=1}^{N}x_iy_i}{N\displaystyle\sum_{i=1}^{N}x_i^2-\left(\displaystyle\sum_{i=1}^{N}x_i\right)^2}
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{ub}
     u_{b} = \sqrt{\frac{\frac{1}{N-2}\displaystyle\sum_{i=1}^{N}(y_i-ax_i - b)^2\displaystyle\sum_{i=1}^{N}x_i^2}{N\displaystyle\sum_{i=1}^{N}x_i^2-\left(\displaystyle\sum_{i=1}^{N}x_i\right)^2}}
 \end{equation}
 
 }
+\newcommand{\mnkuy}{
 
+\begin{equation}\label{a}
+    a = \frac{\displaystyle\sum^N_{i=1} \frac{1}{u_{y_i}} \displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}} x_i\cdot y_ix_i - \displaystyle\sum^N_{i=1} \frac{1}{u_{y_i}} x_i \displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}} y_i}{\displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}} \displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}} (x_i)^2-\left(\displaystyle\sum^N_{i=1}x_i \frac{1}{u_{y_i}} \right)^2}
+\end{equation}
+
+\begin{equation}\label{ua}
+    u_a =\sqrt{ \frac{\displaystyle\sum^N_{i=1} \frac{1}{u_{y_i}} }{\displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}}\displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}}(x_i)^2-\left(\displaystyle\sum^N_{i=1}x_i\frac{1}{u_{y_i}}\right)^2}} 
+\end{equation}
+
+\begin{equation} \label{b}
+    b=\frac{\displaystyle\sum^N_{i=1} \frac{1}{u_{y_i}} (x_i)^2\displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}} y_i-\displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}} x_i\displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}} x_iy_i}{\displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}} \displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}} (x_i)^2-\left(\displaystyle\sum^N_{i=1}x_i\frac{1}{u_{y_i}} \right)^2}
+\end{equation}
+
+\begin{equation}\label{ub}
+   u_b =\sqrt{ \frac{\displaystyle\sum^N_{i=1} \frac{1}{u_{y_i}}x_i^2 }{\displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}}\displaystyle\sum^N_{i=1}\frac{1}{u_{y_i}}(x_i)^2-\left(\displaystyle\sum^N_{i=1}x_i\frac{1}{u_{y_i}}\right)^2}} 
+\end{equation}
+
+}
 % y = ax+b with u_y
 
 % y = ax without u_y
